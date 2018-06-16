@@ -16,6 +16,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
     List<Notice> lstNotice;
+    RecyclerViewAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,13 +68,13 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         for(Notice notice : lstNotice){
 
             String name = notice.getTitle().toLowerCase();
-            if(name.contains(newText))
+            if(name.contains(newText));
 
                 newList.add(notice);
 
         }
 
-
+        adapter.setFilter(newList);
         return true;
     }
 }

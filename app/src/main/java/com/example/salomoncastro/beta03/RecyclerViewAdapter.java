@@ -21,7 +21,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
 
     private Context mContext;
-    private ArrayList<Notice> mData;
+    private  ArrayList<Notice> mData;
 
     public RecyclerViewAdapter(Context mContext, List<Notice> mData) {
         this.mContext = mContext;
@@ -78,6 +78,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         TextView tv_notice_title;
         ImageView img_notice_thumbnail;
         CardView cardView;
+
 
 
         public MyViewHolder(View itemView){
