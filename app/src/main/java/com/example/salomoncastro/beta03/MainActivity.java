@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
 
         RecyclerView myrv = (RecyclerView) findViewById(R.id.recyclerview_id);
-        RecyclerViewAdapter myAdapter = new RecyclerViewAdapter(this,lstNotice);
+        adapter = new RecyclerViewAdapter(this,lstNotice);
         myrv.setLayoutManager(new GridLayoutManager(this,3));
-        myrv.setAdapter(myAdapter);
+        myrv.setAdapter(adapter);
 
     }
 
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         return true;
     }
 
-    //DE ACA PARA ABAJOA LO DE BUSCAR XD
+    //DE ACA PARA ABAJOA LO DE BUSCAR
 
     @Override
     public boolean onQueryTextSubmit(String query) {
@@ -65,13 +65,15 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
         newText = newText.toLowerCase();
         ArrayList<Notice> newList = new ArrayList<>();
-        for(Notice notice : lstNotice){
+        for(Notice notice : lstNotice) {
 
             String name = notice.getTitle().toLowerCase();
-            if(name.contains(newText));
+
+            if (name.contains(newText)) {
 
                 newList.add(notice);
 
+            }
         }
 
         adapter.setFilter(newList);
